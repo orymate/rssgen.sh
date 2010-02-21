@@ -13,6 +13,6 @@ echo BASE='http://example.org/news.html' > rssgen.conf # only once ofc
 
 You might use a Makefile:
 rss.xml: news.html
-	./rssgen $< $>
+	./rssgen $< $@
 
 
