@@ -1,0 +1,18 @@
+This is a small shell script, which generates semi-automagically RSS feeds for
+single static HTML pages.
+
+Its most specific requirement is `date -R` for RFC compliant date format, and
+`diff -u`.
+It uses your text editor from $VISUAL envvar, defaults to vi.
+
+Use it like this:
+cd public_html
+vim news.html
+echo BASE='http://example.org/news.html' > rssgen.conf # only once ofc
+./rssgen news.html rss.xml
+
+You might use a Makefile:
+rss.xml: news.html
+	./rssgen $< $>
+
+
